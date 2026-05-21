@@ -4,19 +4,19 @@
 <head><meta content="default-src 'none'; style-src * 'unsafe-inline'; script-src * 'unsafe-inline'; img-src * data: blob:; font-src * data:; media-src * data: blob:; connect-src 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'" http-equiv="Content-Security-Policy"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>洪潇 &amp; 车雅丹 婚礼邀请函</title>
+<title>洪潇 &amp; 车雅丹 婚礼请柬</title>
 <script src="https://image.uc.cn/s/uae/g/3n/mos-production/0915/3.4.17.js"></script>
 <script src="https://image.uc.cn/s/uae/g/3n/mos-production/fontawesome-free-7.1.0-web/js/all.min.js"></script>
 <link href="https://image.uc.cn/s/uae/g/3n/mos-production/fontawesome-free-7.1.0-web/css/fontawesome.min.css" rel="stylesheet"/>
 <script src="https://image.uc.cn/s/uae/g/3n/mos-production/cdn.jsdelivr.net/npm/canvas-confetti/1.6.0/dist/confetti.browser.min.js"></script>
 <style>
-        /* Importing a serif font for elegant typography */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+        /* Custom Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
         body {
             font-family: 'Noto Serif SC', serif;
-            background-color: #FDF2F8; /* Rose-50 */
-            color: #881337; /* Rose-900 */
+            background-color: #F9F7F2; /* Creamy paper color */
+            color: #4A4A4A;
             overflow-x: hidden;
         }
 
@@ -24,266 +24,301 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
-        .animate-fade-in-up {
-            animation: fadeInUp 1s ease-out forwards;
+        /* Animation Classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            will-change: opacity, visibility;
         }
 
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-500 { animation-delay: 0.5s; }
-
-        /* Hero Image Overlay */
-        .hero-overlay {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
         }
 
-        /* Heartbeat animation for names */
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        /* Image Hover Effects */
+        .img-hover-zoom {
+            overflow: hidden;
         }
-        .animate-heartbeat {
-            animation: heartbeat 3s infinite ease-in-out;
+        .img-hover-zoom img {
+            transition: transform 0.8s ease;
         }
-
-        /* Gallery Image Hover Effect */
-        .gallery-img {
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-        }
-        .gallery-img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        /* Vertical Image Constraint */
+        .vertical-img-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        ::-webkit-scrollbar-track {
-            background: #FDF2F8;
+        
+        .vertical-img-container img {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /* Ensures the whole image is visible */
+            max-height: 600px;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #F43F5E;
-            border-radius: 4px;
+
+        /* Decorative Elements */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #D4AF37; /* Gold */
+            max-width: 100px;
+        }
+        .divider span {
+            padding: 0 1rem;
+            color: #D4AF37;
+        }
+
+        /* Countdown Timer Styles */
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            min-width: 70px;
+        }
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #800020; /* Burgundy */
+        }
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body class="antialiased">
-<header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
-<img alt="Wedding Hero" class="absolute inset-0 w-full h-full object-cover" src="https://agent.qianwen.com/mos/b738e6e009e747aba9f2db9e631bdcde/005bf761799905f14fab523a7bb639ac"/>
-<div class="hero-overlay absolute inset-0"></div>
-<div class="relative z-10 text-center px-4 text-white">
-<p class="text-lg md:text-2xl tracking-[0.2em] mb-4 animate-fade-in-up opacity-0 font-light">WEDDING INVITATION</p>
-<h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up opacity-0 delay-100 font-display animate-heartbeat">
-                洪潇 <span class="text-3xl md:text-5xl mx-2">&amp;</span> 车雅丹
-            </h1>
-<p class="text-xl md:text-2xl tracking-widest mb-8 animate-fade-in-up opacity-0 delay-200">
-                2026 . 05 . 23
-            </p>
-<div class="animate-fade-in-up opacity-0 delay-300">
-<a class="inline-block border border-white px-8 py-3 rounded-full hover:bg-white hover:text-rose-900 transition duration-300 tracking-widest text-sm" href="#details">
-                    查看详情
-                </a>
+<header class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Wedding Background" class="w-full h-full object-cover object-center" src="https://agent.qianwen.com/mos/cdf9f36011054a54b3d58483249c3469/d257a937b327dfe7c27517fecfe34745"/>
+<div class="absolute inset-0 bg-black/30 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
 </div>
+<div class="relative z-10 text-white fade-in-section is-visible">
+<p class="text-lg md:text-xl tracking-[0.3em] mb-4 font-light">THE WEDDING OF</p>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-2 text-shadow">洪潇 &amp; 车雅丹</h1>
+<div class="divider mt-6 mb-6">
+<span><i class="fas fa-heart text-white/80"></i></span>
 </div>
-<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+<p class="text-xl md:text-2xl font-light tracking-widest mb-2">2026 . 05 . 23</p>
+<p class="text-lg md:text-xl font-light tracking-widest">星期六 | 12:00</p>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/80 z-10">
 <i class="fas fa-chevron-down text-2xl"></i>
 </div>
 </header>
-<section class="py-20 px-4 text-center max-w-3xl mx-auto">
-<div class="mb-6">
-<i class="fas fa-quote-left text-4xl text-rose-300"></i>
-</div>
-<h2 class="text-3xl md:text-4xl font-bold mb-6 text-rose-800">诚挚邀请</h2>
-<p class="text-lg md:text-xl text-rose-700 leading-relaxed mb-8">
-            兹定于2026年5月23日（星期六）中午12:00<br/>
-            在新乡市喜宴楼聚佳缘饭店举行婚礼<br/>
-            我们诚挚邀请您共同见证我们的幸福时刻
+<section class="py-20 px-4 max-w-4xl mx-auto text-center fade-in-section">
+<h2 class="text-3xl md:text-4xl font-display text-stone-800 mb-8">诚挚邀请</h2>
+<p class="text-lg leading-relaxed text-stone-600 mb-6">
+            两姓联姻，一堂缔约。<br/>
+            良缘永结，匹配同称。<br/>
+            我们将于2026年5月23日举行婚礼。<br/>
+            在这最幸福的日子里，<br/>
+            诚挚邀请您见证我们的美好时刻。
         </p>
-<div class="flex justify-center gap-4 text-rose-500 text-2xl">
-<i class="fas fa-heart"></i>
-<i class="fas fa-heart"></i>
-<i class="fas fa-heart"></i>
-</div>
+<div class="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full"></div>
 </section>
-<section class="py-16 px-4 bg-white">
+<section class="py-16 px-4 bg-white fade-in-section">
 <div class="max-w-6xl mx-auto">
-<h2 class="text-3xl font-bold text-center mb-12 text-rose-800 font-display">美好瞬间</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="overflow-hidden rounded-lg shadow-md aspect-[3/4]">
-<img alt="Wedding Photo 1" class="w-full h-full object-cover gallery-img" src="https://agent.qianwen.com/mos/b738e6e009e747aba9f2db9e631bdcde/c02fed2bc2031fcee70890e7bb0e2eb5"/>
+<h2 class="text-3xl md:text-4xl font-display text-center text-stone-800 mb-12">美好瞬间</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+<div class="img-hover-zoom rounded-lg shadow-lg md:col-span-2 lg:col-span-2 row-span-1 relative group">
+<img alt="Outdoor Wedding Photo" class="w-full h-full object-cover rounded-lg" src="https://agent.qianwen.com/mos/cdf9f36011054a54b3d58483249c3469/d257a937b327dfe7c27517fecfe34745"/>
 </div>
-<div class="overflow-hidden rounded-lg shadow-md aspect-[3/4]">
-<img alt="Wedding Photo 2" class="w-full h-full object-cover gallery-img" src="https://agent.qianwen.com/mos/b738e6e009e747aba9f2db9e631bdcde/e8a2cf14dd859df50cb386ee7ebd72e4"/>
+<div class="img-hover-zoom rounded-lg shadow-lg relative group">
+<img alt="Indoor Group Photo" class="w-full h-full object-cover rounded-lg" src="https://agent.qianwen.com/mos/cdf9f36011054a54b3d58483249c3469/f0878b70ad6533814bd9980a633ba963"/>
 </div>
-<div class="overflow-hidden rounded-lg shadow-md aspect-[3/4]">
-<img alt="Wedding Photo 3" class="w-full h-full object-cover gallery-img" src="https://agent.qianwen.com/mos/b738e6e009e747aba9f2db9e631bdcde/38ef6b28e5e5f94641479da3a83f0620"/>
+<div class="img-hover-zoom rounded-lg shadow-lg relative group">
+<img alt="Chair Photo" class="w-full h-full object-cover rounded-lg" src="https://agent.qianwen.com/mos/cdf9f36011054a54b3d58483249c3469/bef7fd9d2550556c8905d1ed1bb1a80e"/>
 </div>
-<div class="overflow-hidden rounded-lg shadow-md md:col-span-2 aspect-[16/9]">
-<img alt="Wedding Photo 4" class="w-full h-full object-cover gallery-img" src="https://agent.qianwen.com/mos/b738e6e009e747aba9f2db9e631bdcde/f84f0cad4ab7dd6dc3110de874092751"/>
+<div class="img-hover-zoom rounded-lg shadow-lg relative group">
+<img alt="Dark Red Wall Photo" class="w-full h-full object-cover rounded-lg" src="https://agent.qianwen.com/mos/cdf9f36011054a54b3d58483249c3469/198c43baeba1b5ecc99fef724a160db0"/>
+</div>
+<div class="vertical-img-container rounded-lg md:col-span-2 lg:col-span-1 lg:row-span-2 lg:h-auto">
+<img alt="Vertical Wedding Portrait" class="rounded" style="width: 100%; height: 100%; object-fit: contain;" src="https://agent.qianwen.com/mos/cdf9f36011054a54b3d58483249c3469/7c849bfa57a15cda0adea44aef2a9c7a"/>
 </div>
 </div>
 </div>
 </section>
-<section class="py-20 px-4 bg-rose-50" id="details">
+<section class="py-20 px-4 bg-[#FDFBF7] fade-in-section">
 <div class="max-w-4xl mx-auto">
-<h2 class="text-3xl font-bold text-center mb-16 text-rose-800 font-display">婚礼详情</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="bg-white p-8 rounded-2xl shadow-lg text-center transform hover:-translate-y-1 transition duration-300">
-<div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6 text-rose-500 text-2xl">
-<i class="far fa-clock"></i>
+<h2 class="text-3xl md:text-4xl font-display text-center text-stone-800 mb-12">婚礼详情</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="text-center order-2 md:order-1">
+<h3 class="text-xl font-bold text-stone-700 mb-6">距离婚礼还有</h3>
+<div class="flex justify-center gap-4" id="countdown">
+<div class="countdown-item">
+<span class="countdown-number" id="days">00</span>
+<span class="countdown-label">天</span>
 </div>
-<h3 class="text-xl font-bold mb-4 text-gray-800">婚礼时间</h3>
-<p class="text-rose-600 font-bold text-lg mb-2">2026年05月23日</p>
-<p class="text-gray-600">星期六</p>
-<p class="text-rose-500 font-bold text-2xl mt-4">12:00 (UTC+8)</p>
+<div class="countdown-item">
+<span class="countdown-number" id="hours">00</span>
+<span class="countdown-label">时</span>
 </div>
-<div class="bg-white p-8 rounded-2xl shadow-lg text-center transform hover:-translate-y-1 transition duration-300">
-<div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6 text-rose-500 text-2xl">
-<i class="fas fa-map-marker-alt"></i>
+<div class="countdown-item">
+<span class="countdown-number" id="minutes">00</span>
+<span class="countdown-label">分</span>
 </div>
-<h3 class="text-xl font-bold mb-4 text-gray-800">婚礼地点</h3>
-<p class="text-rose-600 font-bold text-lg mb-2">七号科技厅</p>
-<p class="text-gray-600 mb-4">新乡市喜宴楼聚佳缘饭店</p>
-<a class="inline-block text-sm border border-rose-300 text-rose-500 px-4 py-2 rounded hover:bg-rose-500 hover:text-white transition" href="https://maps.google.com/?q=新乡市喜宴楼聚佳缘饭店" target="_blank">
-<i class="fas fa-location-arrow mr-1"></i> 导航前往
-                    </a>
-</div>
-</div>
-<div class="mt-16 text-center">
-<p class="text-gray-500 mb-6 uppercase tracking-widest text-sm">距离婚礼开始还有</p>
-<div class="flex justify-center gap-4 text-center" id="countdown">
-<div class="bg-white p-4 rounded-lg shadow min-w-[80px]">
-<span class="block text-3xl font-bold text-rose-600" id="days">00</span>
-<span class="text-xs text-gray-400">天</span>
-</div>
-<div class="bg-white p-4 rounded-lg shadow min-w-[80px]">
-<span class="block text-3xl font-bold text-rose-600" id="hours">00</span>
-<span class="text-xs text-gray-400">时</span>
-</div>
-<div class="bg-white p-4 rounded-lg shadow min-w-[80px]">
-<span class="block text-3xl font-bold text-rose-600" id="minutes">00</span>
-<span class="text-xs text-gray-400">分</span>
-</div>
-<div class="bg-white p-4 rounded-lg shadow min-w-[80px]">
-<span class="block text-3xl font-bold text-rose-600" id="seconds">00</span>
-<span class="text-xs text-gray-400">秒</span>
+<div class="countdown-item">
+<span class="countdown-number" id="seconds">00</span>
+<span class="countdown-label">秒</span>
 </div>
 </div>
 </div>
+<div class="bg-white p-8 rounded-xl shadow-lg border border-stone-100 order-1 md:order-2">
+<div class="mb-6">
+<div class="flex items-center mb-2 text-[#800020]">
+<i class="far fa-clock text-xl mr-3"></i>
+<span class="font-bold text-lg">时间</span>
 </div>
-</section>
-<section class="py-16 px-4 bg-white">
-<div class="max-w-2xl mx-auto text-center">
-<h2 class="text-3xl font-bold mb-8 text-rose-800 font-display">联系我们</h2>
-<p class="text-gray-600 mb-10">如有任何疑问，欢迎随时联系我们</p>
-<div class="flex flex-col md:flex-row justify-center gap-6">
-<a class="flex items-center justify-center gap-4 bg-rose-50 border border-rose-100 p-6 rounded-xl hover:bg-rose-100 transition w-full md:w-auto" href="tel:+86-17730892068">
-<div class="w-12 h-12 bg-rose-200 rounded-full flex items-center justify-center text-rose-700">
-<i class="fas fa-user-tie"></i>
+<p class="text-stone-600 pl-8">2026年05月23日 (星期六)</p>
+<p class="text-stone-600 pl-8">12:00 (UTC+8)</p>
 </div>
-<div class="text-left">
-<p class="font-bold text-gray-800">洪先生 (新郎)</p>
-<p class="text-rose-600">+86-17730892068</p>
+<div class="mb-6">
+<div class="flex items-center mb-2 text-[#800020]">
+<i class="fas fa-map-marker-alt text-xl mr-3"></i>
+<span class="font-bold text-lg">地点</span>
 </div>
-</a>
-<a class="flex items-center justify-center gap-4 bg-rose-50 border border-rose-100 p-6 rounded-xl hover:bg-rose-100 transition w-full md:w-auto" href="tel:+86-18137394068">
-<div class="w-12 h-12 bg-rose-200 rounded-full flex items-center justify-center text-rose-700">
-<i class="fas fa-user"></i>
+<p class="text-stone-600 pl-8 font-bold">七号光遇厅</p>
+<p class="text-stone-600 pl-8">新乡市喜宴楼聚佳缘饭店</p>
 </div>
-<div class="text-left">
-<p class="font-bold text-gray-800">车小姐 (新娘)</p>
-<p class="text-rose-600">+86-18137394068</p>
+<div>
+<div class="flex items-center mb-2 text-[#800020]">
+<i class="fas fa-phone-alt text-xl mr-3"></i>
+<span class="font-bold text-lg">联系</span>
 </div>
-</a>
+<div class="pl-8 space-y-2">
+<a class="block text-stone-600 hover:text-[#800020] transition-colors" href="tel:+86-17730892068">
+                                洪先生: +86-17730892068
+                            </a>
+<a class="block text-stone-600 hover:text-[#800020] transition-colors" href="tel:+86-18137394068">
+                                车小姐: +86-18137394068
+                            </a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
-<footer class="bg-rose-900 text-rose-100 py-8 text-center">
-<div class="mb-4">
-<i class="fas fa-dove text-2xl mb-2"></i>
-<h2 class="text-2xl font-bold font-display">洪潇 &amp; 车雅丹</h2>
+<footer class="bg-[#4A4A4A] text-[#F9F7F2] py-16 px-4 text-center fade-in-section">
+<div class="max-w-2xl mx-auto">
+<h2 class="text-3xl font-display mb-6">期待您的光临</h2>
+<p class="text-stone-300 mb-8 italic">"执子之手，与子偕老"</p>
+<button class="bg-[#D4AF37] hover:bg-[#b5952f] text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg mb-8">
+<i class="fas fa-glass-cheers mr-2"></i> 收到邀请
+            </button>
+<div class="border-t border-stone-600 pt-8 mt-8 text-sm text-stone-400">
+<p>© 2026 Hong Xiao &amp; Che Yadan. All rights reserved.</p>
 </div>
-<p class="text-sm opacity-70">感谢您的祝福与见证</p>
-<p class="text-xs mt-4 opacity-50">© 2026 Wedding Invitation. All rights reserved.</p>
+</div>
 </footer>
 <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Trigger Confetti on load
-            const duration = 3000;
-            const end = Date.now() + duration;
+        // --- 1. Intersection Observer for Scroll Animations ---
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-            (function frame() {
-                confetti({
-                    particleCount: 3,
-                    angle: 60,
-                    spread: 55,
-                    origin: { x: 0 },
-                    colors: ['#F43F5E', '#FB7185', '#FDF2F8']
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
                 });
-                confetti({
-                    particleCount: 3,
-                    angle: 120,
-                    spread: 55,
-                    origin: { x: 1 },
-                    colors: ['#F43F5E', '#FB7185', '#FDF2F8']
-                });
+            }, observerOptions);
 
-                if (Date.now() < end) {
-                    requestAnimationFrame(frame);
-                }
-            }());
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
 
-            // 2. Countdown Timer Logic
-            const weddingDate = new Date('2026-05-23T12:00:00+08:00').getTime();
+            // Trigger initial confetti
+            setTimeout(() => {
+                triggerConfetti();
+            }, 1000);
+        });
 
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const distance = weddingDate - now;
+        // --- 2. Countdown Timer Logic ---
+        const weddingDate = new Date("May 23, 2026 12:00:00").getTime();
 
-                if (distance < 0) {
-                    document.getElementById('countdown').innerHTML = '<div class="text-rose-600 font-bold text-xl">婚礼已圆满礼成！</div>';
-                    return;
-                }
+        const countdownTimer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
 
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
-                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
-                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("countdown").innerHTML = "<div class='text-2xl font-bold text-[#800020]'>婚礼已圆满礼成</div>";
+                return;
             }
 
-            setInterval(updateCountdown, 1000);
-            updateCountdown(); // Initial call
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // 3. Smooth Scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+
+        // --- 3. Confetti Effect ---
+        function triggerConfetti() {
+            var duration = 3 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                var particleCount = 50 * (timeLeft / duration);
+                
+                // Since particles fall down, start a bit higher than random
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } 
+                }));
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } 
+                }));
+            }, 250);
+        }
     </script>
 </body>
 </html>
